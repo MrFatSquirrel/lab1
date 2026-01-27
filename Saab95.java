@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class Saab95 extends Main{
-    // I HATE THIS PROGRAMI HATE THIS PROGRAMII HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAM
+    // I HATE THIS PROGRAMI HATE THIS PROGRAMII HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAM AHHHH
     private boolean turboOn;
     // public int nrDoors; // Number of doors on the car
     // public double enginePower; // Engine power of the car

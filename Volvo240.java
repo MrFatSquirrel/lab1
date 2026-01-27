@@ -1,5 +1,5 @@
 import java.awt.*;
-// I HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAM
+// I HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAM AHHH
 public class Volvo240 extends Main{
 
     private final static double trimFactor = 1.25;

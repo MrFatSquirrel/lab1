@@ -2,7 +2,7 @@ import java.awt.*;
 
 abstract class Main{
     static void main(){
-        System.out.println("Hello World");
+        System.out.println("Hello Worldies");
     }
     public int nrDoors; // Number of doors on the car
     public double enginePower; // Engine power of the car
