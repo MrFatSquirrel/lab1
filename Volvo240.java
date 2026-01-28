@@ -1,6 +1,6 @@
 import java.awt.*;
 // I HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAM AHHH
-public class Volvo240 extends Main{
+public class Volvo240 extends LeCar {
 
     private final static double trimFactor = 1.25;
     // DONE public int nrDoors; // Number of doors on the car
@@ -9,7 +9,7 @@ public class Volvo240 extends Main{
     // DONE public Color color; // Color of the car
     // DONE public String modelName; // The car model name
     
-    private Volvo240(){
+    public Volvo240(){
         nrDoors = 4;
         color = Color.black;
         enginePower = 100;

@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Saab95 extends Main{
+public class Saab95 extends LeCar {
     // I HATE THIS PROGRAMI HATE THIS PROGRAMII HATE THIS PROGRAMI HATE THIS PROGRAMI HATE THIS PROGRAM AHHHH
     private boolean turboOn;
     // public int nrDoors; // Number of doors on the car
@@ -9,7 +9,7 @@ public class Saab95 extends Main{
     // public Color color; // Color of the car
     // public String modelName; // The car model name
     
-    private Saab95(){
+    public Saab95(){
         nrDoors = 2;
         color = Color.red;
         enginePower = 125;
