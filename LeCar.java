@@ -18,7 +18,6 @@ abstract class LeCar implements Movable{
         this.color = color;
         this.enginePower = enginePower;
         this.modelName = modelName;
-
     }
 
     // Functions for both vehicles //
@@ -72,7 +71,6 @@ abstract class LeCar implements Movable{
         }
     }
 
-
     // Move functions below //
     @Override
     public void move() {
@@ -81,13 +79,13 @@ abstract class LeCar implements Movable{
             currentXPosition += currentSpeed;
         }
         else if (direction == -1) { // East
-            currentXPosition -= currentSpeed;
+            currentXPosition = currentXPosition - currentSpeed;
         }
         else if (direction == 2) { // North
             currentYPosition += currentSpeed;
         }
         else if (direction == 0) {// South
-            currentYPosition -= currentSpeed;
+            currentYPosition = currentYPosition - currentSpeed;
         }
     }
 

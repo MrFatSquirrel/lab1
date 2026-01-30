@@ -20,43 +20,42 @@ class LeCarTest {
     // Creates instance of LeCar.java //
     public LeCar lecar;
 
-    /*protected LeCarTest(int nrDoors, Color color, double enginePower, String modelName) {
-        super(2, Color.red, 240, "HeHeHaw");
-    }
-
-    @Override
-    protected double speedFactor(){
-        return enginePower * 0.01;
-    }
-    */
-
     @BeforeEach
-    protected void carMaker() {
+    protected void ZeCarMaker() {
         lecar = new Carish();
-
     }
 
     @Test
     public void move() {
-
+         /// SKA ÄNDRAS HEHEHEHEHE
         LeCar.direction = 1;
         LeCar.currentSpeed = 0.5;
-        LeCar.currentXPosition = 1;
-        assertEquals(1.5, LeCar.currentSpeed + LeCar.currentXPosition);
+        lecar.move();
+        double oldPos = LeCar.currentXPosition;
+        lecar.move();
+        assertEquals(LeCar.currentXPosition, LeCar.currentSpeed + oldPos);
 
         LeCar.direction = -1;
-        assertEquals(0.5, LeCar.currentXPosition - LeCar.currentSpeed);
+        LeCar.currentSpeed = 0.5;
+        lecar.move();
+        oldPos = LeCar.currentXPosition;
+        lecar.move();
+        assertEquals(LeCar.currentXPosition, LeCar.currentSpeed - oldPos);
 
         LeCar.direction = 2;
         LeCar.currentSpeed = 0.5;
-        LeCar.currentYPosition = 0;
-        assertEquals(0.5, LeCar.currentSpeed + LeCar.currentYPosition);
+        lecar.move();
+        oldPos = LeCar.currentYPosition;
+        lecar.move();
+        assertEquals(LeCar.currentYPosition, LeCar.currentSpeed + oldPos);
 
         LeCar.direction = 0;
         LeCar.currentSpeed = 0.5;
-        assertEquals(-0.5, LeCar.currentYPosition - LeCar.currentSpeed);
-    }
+        lecar.move();
+        oldPos = LeCar.currentYPosition;
+        lecar.move();
 
+    }
 
     @Test
     public void turnLeft() {
@@ -83,5 +82,4 @@ class LeCarTest {
         lecar.turnRight();
         assertEquals(0, LeCar.direction);
     }
-
 }

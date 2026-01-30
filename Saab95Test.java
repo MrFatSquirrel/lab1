@@ -55,18 +55,21 @@ class Saab95Test {
     protected void incrementSpeed() {
         saab95.incrementSpeed(saab95.getEnginePower() + 1);
         assertEquals(saab95.enginePower, Saab95.currentSpeed);
-        Saab95.currentSpeed = 0;
+
+        Saab95.currentSpeed = 0.1;
         saab95.incrementSpeed(0);
         assertNotEquals(saab95.enginePower, Saab95.currentSpeed);
     }
 
     @Test
     protected void decrementSpeed() {
-        saab95.incrementSpeed(0);
-        assertEquals(0, Saab95.currentSpeed);
         Saab95.currentSpeed = 1;
-        saab95.incrementSpeed(1);
-        assertNotEquals(0, Saab95.currentSpeed);
+        saab95.decrementSpeed(0);
+        assertEquals(1, Saab95.currentSpeed);
+
+        Saab95.currentSpeed = 1;
+        saab95.decrementSpeed(1);
+        assertEquals(0, Saab95.currentSpeed);
 
     }
 
@@ -87,6 +90,7 @@ class Saab95Test {
         saab95.brake(1);
         assertNotEquals(oldSpeed, saab95.getCurrentSpeed());
 
+        // To see if it goes negative //
         saab95.brake(0.5);
         oldSpeed = saab95.getCurrentSpeed(); // Expected to give 0
         saab95.brake(1);
