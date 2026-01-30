@@ -5,16 +5,14 @@ import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Saab95Test {
-    // Move, turn, gas, break, De stora viktiga liksom
+
+    // Creates instance of Saab95.java //
     private Saab95 saab95;
 
+    // Saves instance as saab95 before each run //
     @BeforeEach
     protected void before() {
         saab95 = new Saab95();
-    }
-
-    @Test
-    void setColor() {
     }
 
     @Test
@@ -38,18 +36,28 @@ class Saab95Test {
     }
 
     @Test
-    public void setTurboOff() {
+    protected void setTurboOff() {
+        saab95.setTurboOn();
+        assertTrue(saab95.turboOn);
         saab95.setTurboOff();
         assertFalse(saab95.turboOn);
     }
 
     @Test
-    public void speedFactor() {
+    protected void speedFactor() {
+        double speedTurboOff = saab95.speedFactor();
+        saab95.setTurboOn();
+        double speedTurboOn = saab95.speedFactor();
+        assertTrue(speedTurboOff < speedTurboOn);
     }
 
     @Test
-    public void incrementSpeed() {
-
+    protected void incrementSpeed() {
+        saab95.incrementSpeed(saab95.getEnginePower() + 1);
+        assertEquals(saab95.enginePower, Saab95.currentSpeed);
+        Saab95.currentSpeed = 0;
+        saab95.incrementSpeed(0);
+        assertNotEquals(saab95.enginePower, Saab95.currentSpeed);
     }
 
     @Test

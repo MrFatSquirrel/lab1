@@ -1,19 +1,19 @@
 import java.awt.*;
 
-
-
 abstract class LeCar implements Movable{
 
-    public  int nrDoors; // Number of doors on the car
-    protected double enginePower; // Engine power of the car
-    public  double currentSpeed; // The current speed of the car
-    public  Color color; // Color of the car
-    public  String modelName;
-    public  int direction;
-    public  double currentXPosition;
-    public  double currentYPosition;
+    // Global variables //
+    protected int nrDoors;
+    protected double enginePower;
+    protected static double currentSpeed;
+    protected Color color;
+    protected String modelName;
+    protected static int direction;
+    protected static double currentXPosition;
+    protected static double currentYPosition;
 
-    public LeCar(int nrDoors, Color color, double enginePower, String modelName){
+    // Constructor below //
+    protected LeCar(int nrDoors, Color color, double enginePower, String modelName){
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
@@ -21,7 +21,8 @@ abstract class LeCar implements Movable{
 
     }
 
-    public double getEnginePower(){
+    // Functions for both vehicles //
+    protected double getEnginePower(){
         return enginePower;
     }
 
@@ -72,7 +73,7 @@ abstract class LeCar implements Movable{
     }
 
 
-
+    // Move functions below //
     @Override
     public void move() {
         // 2 = North, 1 = West, 0 = South, -1 = East //
@@ -89,7 +90,7 @@ abstract class LeCar implements Movable{
             currentYPosition -= currentSpeed;
         }
     }
-    // 2 = N, 1 = W, 0 = S, -1 = E
+
     @Override
     public void turnLeft() {
         direction -= 1;

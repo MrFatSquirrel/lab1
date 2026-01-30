@@ -18,13 +18,19 @@ class Volvo240Test {
     protected void speedFactor() {
         assertEquals(1.25, volvo240.speedFactor());
     }
+
     @Test
     protected void trimFactor() {
         assertEquals(1.25, volvo240.trimFactor);
     }
-    @Test
-    void incrementSpeed() {
 
+    @Test
+    protected void incrementSpeed() {
+        volvo240.incrementSpeed(volvo240.getEnginePower() + 1);
+        assertEquals(volvo240.enginePower, Volvo240.currentSpeed);
+        Volvo240.currentSpeed = 0;
+        volvo240.incrementSpeed(0);
+        assertNotEquals(volvo240.enginePower, Volvo240.currentSpeed);
     }
 
     @Test
